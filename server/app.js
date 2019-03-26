@@ -11,7 +11,7 @@ require("./controllers/chatcontroller.js")(app,io);
 //port configuration
 const port = 9090
 //database configuration
-mongoose.connect("mongodb://localhost:27017/chatApp")
+mongoose.connect("mongodb://localhost:27017/chatApp", { useNewUrlParser: true })
 .then( () => {
     http.listen(port, () => {
         console.log("chatApp is listening on http://"+ip.address()+":9090")
